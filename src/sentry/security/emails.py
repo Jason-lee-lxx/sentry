@@ -24,6 +24,9 @@ def generate_security_email(account, type, actor, ip_address, context=None, curr
     elif type == 'recovery-codes-regenerated':
         template = 'sentry/emails/recovery-codes-regenerated.txt'
         html_template = 'sentry/emails/recovery-codes-regenerated.html'
+    elif type == 'device-removed':
+        template = 'sentry/emails/device-removed.txt'
+        html_template = 'sentry/emails/device-removed.html'
     else:
         raise ValueError('unknown type: {}'.format(type))
 

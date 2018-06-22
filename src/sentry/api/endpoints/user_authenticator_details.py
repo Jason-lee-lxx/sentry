@@ -121,13 +121,13 @@ class UserAuthenticatorDetailsEndpoint(UserEndpoint):
             interface.authenticator.save()
             capture_security_activity(
                 account=user,
-                type='mfa-removed',
+                type='device-removed',
                 actor=request.user,
                 ip_address=request.META['REMOTE_ADDR'],
                 context={
                     'authenticator': authenticator,
                 },
-                send_email=False
+                send_email=True
             )
             return Response(status=status.HTTP_204_NO_CONTENT)
 

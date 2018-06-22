@@ -9,6 +9,7 @@ from sentry.web.frontend.debug.debug_assigned_email import (
     DebugAssignedEmailView, DebugSelfAssignedEmailView, DebugSelfAssignedTeamEmailView
 )
 from sentry.web.frontend.debug.debug_trigger_error import (DebugTriggerErrorView)
+from sentry.web.frontend.debug.debug_device_removed_email import (DebugDeviceRemovedEmailView)
 from sentry.web.frontend.debug.debug_error_embed import (DebugErrorPageEmbedView)
 from sentry.web.frontend.debug.debug_invalid_identity_email import DebugInvalidIdentityEmailView
 from sentry.web.frontend.debug.debug_mfa_added_email import (DebugMfaAddedEmailView)
@@ -76,6 +77,7 @@ urlpatterns = patterns(
     url(r'^debug/mail/mfa-removed/$', DebugMfaRemovedEmailView.as_view()),
     url(r'^debug/mail/mfa-added/$', DebugMfaAddedEmailView.as_view()),
     url(r'^debug/mail/recovery-codes-regenerated/$', DebugRecoveryCodesRegeneratedEmailView.as_view()),
+    url(r'^debug/mail/device-removed/$', DebugDeviceRemovedEmailView.as_view()),
     url(r'^debug/mail/password-changed/$', DebugPasswordChangedEmailView.as_view()),
     url(r'^debug/mail/new-processing-issues/$', DebugNewProcessingIssuesEmailView.as_view()),
     url(
